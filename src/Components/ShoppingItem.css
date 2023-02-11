@@ -1,0 +1,40 @@
+.shopping-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: black;
+  padding: 10px;
+  background-color: #fff9f0;
+  border-radius: 5px;
+  width: 300px;
+  transition: all 0.3s ease-out;
+}
+
+.shopping-item.complete {
+  color: rgba(0, 0, 0, 0.5);
+  text-emphasis-style: double;
+  background-color: #cec9c2;
+}
+
+.shopping-item.complete span {
+  text-decoration: line-through;
+  transform: translateX(20px);
+}
+
+.shopping-item span {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.shopping-item button {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url("../Images/icons8-delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

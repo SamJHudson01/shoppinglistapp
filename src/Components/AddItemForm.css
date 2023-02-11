@@ -1,0 +1,42 @@
+.add-item-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #222537;
+  width: 280px;
+}
+
+.add-item-form input[type="text"] {
+  margin-bottom: 10px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.add-item-form button {
+  background-color: #e59f39;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button.submit-button[disabled] {
+  background-color: #cec9c2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 30px;
+  cursor: not-allowed;
+  width: 100%;
+}
