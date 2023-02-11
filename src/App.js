@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ShoppingList from "./Components/ShoppingList";
 import AddItemForm from "./Components/AddItemForm";
-import { firebase, database } from "./APIs/firebase";
-import { ref, set, onValue, remove, listener, update } from "firebase/database";
+import { database } from "./APIs/firebase";
+import { ref, set, onValue, remove, update } from "firebase/database";
 import "./App.css";
 
 const App = () => {
@@ -29,14 +29,6 @@ const App = () => {
       name: item,
       isComplete: false,
     });
-
-    // onValue(ref(database, "items/"), (snapshot) => {
-    //   if (snapshot.exists()) {
-    //     setItems(Object.values(snapshot.val()));
-    //   } else {
-    //     setItems([]);
-    //   }
-    // });
   };
 
   const deleteItem = (id) => {
@@ -49,17 +41,6 @@ const App = () => {
         console.error(error);
       });
   };
-
-  // const markComplete = (id) => {
-  //   setItems(
-  //     items.map((item) => {
-  //       if (item.id === id) {
-  //         return { ...item, isComplete: !item.isComplete };
-  //       }
-  //       return item;
-  //     })
-  //   );
-  // };
 
   const markComplete = (id) => {
     items.forEach((item) => {
