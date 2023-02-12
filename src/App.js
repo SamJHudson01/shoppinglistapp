@@ -9,8 +9,9 @@ const App = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    let itemsData;
     const fetchData = async () => {
-      const itemsData = await onValue(ref(database, "items"), (snapshot) => {
+      itemsData = await onValue(ref(database, "items"), (snapshot) => {
         if (snapshot.exists()) {
           setItems(Object.values(snapshot.val()));
         } else {
@@ -20,6 +21,11 @@ const App = () => {
     };
 
     fetchData();
+    return () => {
+      if (itemsData) {
+        itemsData.off();
+      }
+    };
   }, []);
 
   const addItem = (item) => {
@@ -32,14 +38,9 @@ const App = () => {
   };
 
   const deleteItem = (id) => {
-    console.log(id);
-    remove(ref(database, `items/${id}`))
-      .then(() => {
-        setItems(items.filter((item) => item.id !== id));
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    remove(ref(database, `items/${id}`)).catch((error) => {
+      console.error(error);
+    });
   };
 
   const markComplete = (id) => {
