@@ -12,9 +12,9 @@
 }
 
 .shopping-item.complete {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(72, 169, 59, 0.7);
   text-emphasis-style: double;
-  background-color: #cec9c2;
+  background-color: #797671;
 }
 
 .shopping-item.complete span {

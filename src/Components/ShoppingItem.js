@@ -2,7 +2,6 @@ import React from "react";
 import "./ShoppingItem.css";
 
 const ShoppingItem = ({ item, onDelete, onMarkComplete }) => {
-  console.log(item);
   return (
     <li
       className={`shopping-item ${item.isComplete ? "complete" : ""}`}
